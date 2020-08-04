@@ -16,4 +16,7 @@ struct node *insert_node(struct node *, int, short *);
 // Pre-order traversal
 void preorder_traversal(struct node *);
 
+// Post-order traversal
+void postorder_traversal(struct node *);
+
 #endif

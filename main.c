@@ -59,6 +59,7 @@ int main(void) {
 			case 3:
 				clear();
 				printf("Post-order traversal.\n");
+				postorder_traversal(tree);
 				break;
 
 			case 4:
