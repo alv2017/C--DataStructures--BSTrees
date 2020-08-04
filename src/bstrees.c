@@ -51,4 +51,14 @@ void preorder_traversal(struct node *tree) {
 	}
 }
 
+// Post-order traversal
+void postorder_traversal(struct node *tree) {
+	struct node *ptr = tree;
+	if (ptr != NULL) {
+		postorder_traversal(ptr->left);
+		postorder_traversal(ptr->right);
+		printf("%d ", ptr->data);
+	}
+}
+
 
