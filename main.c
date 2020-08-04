@@ -65,6 +65,7 @@ int main(void) {
 			case 4:
 				clear();
 				printf("In-order traversal.\n");
+				inorder_traversal(tree);
 				break;
 
 			case 5:

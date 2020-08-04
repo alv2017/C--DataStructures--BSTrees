@@ -19,4 +19,7 @@ void preorder_traversal(struct node *);
 // Post-order traversal
 void postorder_traversal(struct node *);
 
+// In-order traversal
+void inorder_traversal(struct node *);
+
 #endif
