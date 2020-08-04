@@ -61,4 +61,14 @@ void postorder_traversal(struct node *tree) {
 	}
 }
 
+// In-order traversal
+void inorder_traversal(struct node *tree) {
+	struct node *ptr = tree;
+	if (ptr != NULL) {
+		inorder_traversal(ptr->left);
+		printf("%d ", ptr->data);
+		inorder_traversal(ptr->right);
+	}
+}
+
 
