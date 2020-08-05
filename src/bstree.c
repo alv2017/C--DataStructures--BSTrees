@@ -74,7 +74,7 @@ void inorder_traversal(struct node *tree) {
 // Node with the largest value
 struct node *find_largest(struct node *tree) {
 	struct node *ptr = tree;
-	if (ptr == NULL | ptr->right == NULL) {
+	if (ptr == NULL || ptr->right == NULL) {
 		return ptr;
 	} else {
 		return find_largest(tree->right);

@@ -22,4 +22,7 @@ void postorder_traversal(struct node *);
 // In-order traversal
 void inorder_traversal(struct node *);
 
+// Node with the largest value
+struct node *find_largest(struct node *);
+
 #endif

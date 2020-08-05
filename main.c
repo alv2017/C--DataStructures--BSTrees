@@ -76,6 +76,12 @@ int main(void) {
 			case 6:
 				clear();
 				printf("Find the largest element.\n");
+				struct node *largest = find_largest(tree);
+				if (largest != NULL) {
+					printf("The largest element value: %d.\n", largest->data);
+				} else {
+					puts("The tree is empty.");
+				}
 				break;
 
 			case 7:
