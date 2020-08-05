@@ -71,6 +71,12 @@ int main(void) {
 			case 5:
 				clear();
 				printf("Find the smallest element.\n");
+				struct node *smallest = find_smallest(tree);
+				if (smallest != NULL) {
+					printf("Smallest node value: %d.\n", smallest->data);
+				} else {
+					puts("The tree is empty.\n");
+				}
 				break;
 
 			case 6:
