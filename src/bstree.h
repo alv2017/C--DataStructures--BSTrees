@@ -22,4 +22,9 @@ void postorder_traversal(struct node *);
 // In-order traversal
 void inorder_traversal(struct node *);
 
+// Node with the smallest value
+struct node *find_smallest(struct node *tree);
+
+
+
 #endif

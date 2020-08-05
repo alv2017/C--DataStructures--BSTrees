@@ -71,4 +71,16 @@ void inorder_traversal(struct node *tree) {
 	}
 }
 
+// Smallest Element
+struct node *find_smallest(struct node *tree) {
+	struct node *ptr;
+	ptr = tree;
+
+	if (ptr == NULL || ptr->left == NULL) {
+		return ptr;
+	} else {
+		return find_smallest(tree->left);
+	}
+	return ptr;
+}
 
