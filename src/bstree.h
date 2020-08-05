@@ -25,6 +25,7 @@ void inorder_traversal(struct node *);
 // Node with the smallest value
 struct node *find_smallest(struct node *tree);
 
-
+// Node with the largest value
+struct node *find_largest(struct node *);
 
 #endif
