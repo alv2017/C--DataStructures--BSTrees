@@ -53,20 +53,35 @@ int main(void) {
 
 			case 2:
 				clear();
-				printf("Pre-order traversal:\n");
-				preorder_traversal(tree);
+				puts("Pre-order traversal:");
+				if (tree==NULL) {
+					puts("The tree is empty.");
+				}
+				else {
+					preorder_traversal(tree);
+				}
 				break;
 
 			case 3:
 				clear();
-				printf("Post-order traversal.\n");
-				postorder_traversal(tree);
+				puts("Post-order traversal.");
+				if (tree == NULL) {
+					puts("The tree is empty.");
+				}
+				else {
+				    postorder_traversal(tree);
+				}
 				break;
 
 			case 4:
 				clear();
-				printf("In-order traversal.\n");
-				inorder_traversal(tree);
+				puts("In-order traversal.");
+				if (tree == NULL) {
+					puts("The tree is empty.");
+				}
+				else {
+				    inorder_traversal(tree);
+				}
 				break;
 
 			case 5:
