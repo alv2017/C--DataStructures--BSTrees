@@ -94,3 +94,66 @@ struct node *find_largest(struct node *tree) {
 	}
 }
 
+// Deleting a node
+struct node *delete_node(struct node *subtree, struct node *parent, int value, short *op_status) {
+	if (subtree==NULL) {
+		printf("The node with the value %d was not found.\n", value);
+		*op_status = 0;
+		return subtree;
+	}
+	struct node *ptr = subtree;
+	struct node *tmp = NULL;
+	if (ptr->data > value) {
+		parent = ptr;
+		delete_node(ptr->left, parent, value, op_status);
+	}
+	else if (ptr->data < value) {
+		parent = ptr;
+		delete_node(ptr->right, parent, value, op_status);
+	}
+	else if (ptr->left && ptr->right) {
+		tmp = find_largest(ptr->left);
+		ptr->data = tmp->data;
+		parent = ptr;
+		delete_node(ptr->left, parent, tmp->data, op_status);
+	}
+	else {
+		if (ptr->left == NULL && ptr->right == NULL) {
+			if (parent == NULL) {
+				subtree = NULL;
+			}
+			else if (parent->data > ptr->data) {
+				parent->left = NULL;
+			} else {
+				parent->right = NULL;
+			}
+		}
+		else if (ptr->left == NULL) {
+			if (parent == NULL) {
+				subtree = ptr->right;
+			}
+			else if (parent->data > ptr->data){
+				parent->left = ptr->right;
+			} else {
+				parent->right = ptr->right;
+			}
+		}
+		else if (ptr->right == NULL) {
+			if (parent==NULL) {
+				subtree = ptr->left;
+			}
+			else if (parent->data > ptr->data){
+				parent->left = ptr->left;
+			} else {
+				parent->right = ptr->left;
+			}
+		}
+		*op_status = 1;
+		free(ptr);
+	}
+	return subtree;
+}
+
+
+
+
