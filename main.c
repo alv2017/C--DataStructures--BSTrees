@@ -12,7 +12,7 @@ const char *menu[] = {
 		" 4. In-order traversal.",
 		" 5. Find the smallest element.",
 		" 6. Find the largest element.",
-		" 7. Delete element.",
+		" 7. Delete tree node.",
 		" 8. Count nodes.",
 		" 9. Count internal nodes.",
 		"10. Count external nodes.",
@@ -25,6 +25,7 @@ const char *menu[] = {
 };
 
 int main(void) {
+	op_status = 0;
 	// Tree
 	struct node *tree = NULL;
 
@@ -92,7 +93,13 @@ int main(void) {
 
 			case 7:
 				clear();
-				printf("Delete an element.\n");
+				puts("Deleting a node.");
+				puts("First you need to enter the value of the node you want to delete");
+				int delete_value = enter_value();
+				tree = delete_node(tree, NULL, delete_value, &op_status);
+				if ( op_status == 1) {
+					printf("Node with the value %d has been deleted.\n", delete_value);
+				}
 				break;
 
 			case 8:
