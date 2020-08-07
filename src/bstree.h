@@ -37,5 +37,8 @@ int tree_height(struct node *);
 // Number of nodes
 long total_nodes(struct node *subtree);
 
+// Internal nodes
+long internal_nodes(struct node *);
+
 
 #endif

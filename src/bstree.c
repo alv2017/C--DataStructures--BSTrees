@@ -181,5 +181,18 @@ long total_nodes(struct node *subtree) {
 	}
 }
 
+// Number of internal nodes
+long internal_nodes(struct node *subtree) {
+	if (subtree == NULL) {
+		return 0;
+	}
+	else if (subtree->left == NULL && subtree->right == NULL) {
+		return 0;
+	}
+	else {
+		return internal_nodes(subtree->left) + internal_nodes(subtree->right) + 1;
+	}
+}
+
 
 
