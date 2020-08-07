@@ -154,6 +154,7 @@ struct node *delete_node(struct node *subtree, struct node *parent, int value, s
 	return subtree;
 }
 
+// Tree Height
 int tree_height(struct node *subtree) {
 	if (subtree == NULL) {
 		return 0;
@@ -170,6 +171,15 @@ int tree_height(struct node *subtree) {
 	}
 }
 
+// Number of nodes
+long total_nodes(struct node *subtree) {
+	if (subtree == NULL) {
+		return 0;
+	}
+	else {
+		return total_nodes(subtree->left) + total_nodes(subtree->right) + 1;
+	}
+}
 
 
 

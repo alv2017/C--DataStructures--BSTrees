@@ -119,7 +119,9 @@ int main(void) {
 
 			case 8:
 				clear();
-				printf("Count tree nodes.\n");
+				puts("Counting the number of nodes.");
+				long number_of_nodes = total_nodes(tree);
+				printf("Number of nodes: %ld.\n", number_of_nodes);
 				break;
 
 			case 9:

@@ -34,5 +34,8 @@ struct node *delete_node(struct node *, struct node *, int, short *);
 // Tree height
 int tree_height(struct node *);
 
+// Number of nodes
+long total_nodes(struct node *subtree);
+
 
 #endif
