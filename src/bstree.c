@@ -105,24 +105,24 @@ struct node *delete_node(struct node *subtree, struct node *parent, int value, s
 	struct node *tmp = NULL;
 	if (ptr->data > value) {
 		parent = ptr;
-		delete_node(ptr->left, parent, value, op_status);
+		ptr = delete_node(ptr->left, parent, value, op_status);
 	}
 	else if (ptr->data < value) {
 		parent = ptr;
-		delete_node(ptr->right, parent, value, op_status);
+		ptr = delete_node(ptr->right, parent, value, op_status);
 	}
 	else if (ptr->left && ptr->right) {
 		tmp = find_largest(ptr->left);
 		ptr->data = tmp->data;
 		parent = ptr;
-		delete_node(ptr->left, parent, tmp->data, op_status);
+		ptr = delete_node(ptr->left, parent, tmp->data, op_status);
 	}
 	else {
 		if (ptr->left == NULL && ptr->right == NULL) {
 			if (parent == NULL) {
 				subtree = NULL;
 			}
-			else if (parent->data > ptr->data) {
+			else if (parent->data >= ptr->data) {
 				parent->left = NULL;
 			} else {
 				parent->right = NULL;
@@ -132,7 +132,7 @@ struct node *delete_node(struct node *subtree, struct node *parent, int value, s
 			if (parent == NULL) {
 				subtree = ptr->right;
 			}
-			else if (parent->data > ptr->data){
+			else if (parent->data >= ptr->data){
 				parent->left = ptr->right;
 			} else {
 				parent->right = ptr->right;
@@ -142,7 +142,7 @@ struct node *delete_node(struct node *subtree, struct node *parent, int value, s
 			if (parent==NULL) {
 				subtree = ptr->left;
 			}
-			else if (parent->data > ptr->data){
+			else if (parent->data >= ptr->data){
 				parent->left = ptr->left;
 			} else {
 				parent->right = ptr->left;
