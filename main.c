@@ -135,7 +135,9 @@ int main(void) {
 
 			case 11:
 				clear();
-				printf("Determine tree height.\n");
+				puts("Determining the tree height.");
+				int bst_height = tree_height(tree);
+				printf("Tree height: %d.\n", bst_height);
 				break;
 
 			case 12:

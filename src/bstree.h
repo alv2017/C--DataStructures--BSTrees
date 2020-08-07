@@ -31,5 +31,8 @@ struct node *find_largest(struct node *);
 // Delete node
 struct node *delete_node(struct node *, struct node *, int, short *);
 
+// Tree height
+int tree_height(struct node *);
+
 
 #endif
