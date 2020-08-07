@@ -194,5 +194,18 @@ long internal_nodes(struct node *subtree) {
 	}
 }
 
+// Number of external nodes
+long external_nodes(struct node *subtree) {
+	if (subtree == NULL) {
+		return 0;
+	}
+	else if (subtree->left == NULL && subtree->right == NULL) {
+		return 1;
+	}
+	else {
+		return external_nodes(subtree->left) + external_nodes(subtree->right);
+	}
+}
+
 
 

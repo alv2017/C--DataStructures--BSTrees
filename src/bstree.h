@@ -40,5 +40,8 @@ long total_nodes(struct node *subtree);
 // Internal nodes
 long internal_nodes(struct node *);
 
+// External nodes
+long external_nodes(struct node *);
+
 
 #endif
