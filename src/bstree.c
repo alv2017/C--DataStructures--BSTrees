@@ -154,6 +154,58 @@ struct node *delete_node(struct node *subtree, struct node *parent, int value, s
 	return subtree;
 }
 
+// Tree Height
+int tree_height(struct node *subtree) {
+	if (subtree == NULL) {
+		return 0;
+	}
+	else {
+		int leftHeight = tree_height(subtree->left);
+		int rightHeight = tree_height(subtree->right);
+		if (leftHeight > rightHeight) {
+			return leftHeight + 1;
+		}
+		else {
+			return rightHeight + 1;
+		}
+	}
+}
+
+// Number of nodes
+long total_nodes(struct node *subtree) {
+	if (subtree == NULL) {
+		return 0;
+	}
+	else {
+		return total_nodes(subtree->left) + total_nodes(subtree->right) + 1;
+	}
+}
+
+// Number of internal nodes
+long internal_nodes(struct node *subtree) {
+	if (subtree == NULL) {
+		return 0;
+	}
+	else if (subtree->left == NULL && subtree->right == NULL) {
+		return 0;
+	}
+	else {
+		return internal_nodes(subtree->left) + internal_nodes(subtree->right) + 1;
+	}
+}
+
+// Number of external nodes
+long external_nodes(struct node *subtree) {
+	if (subtree == NULL) {
+		return 0;
+	}
+	else if (subtree->left == NULL && subtree->right == NULL) {
+		return 1;
+	}
+	else {
+		return external_nodes(subtree->left) + external_nodes(subtree->right);
+	}
+}
 
 
 

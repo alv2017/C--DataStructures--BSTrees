@@ -119,23 +119,31 @@ int main(void) {
 
 			case 8:
 				clear();
-				printf("Count tree nodes.\n");
+				puts("Counting the number of nodes.");
+				long number_of_nodes = total_nodes(tree);
+				printf("Number of nodes: %ld.\n", number_of_nodes);
 				break;
 
 			case 9:
 				clear();
-				printf("Count tree internal nodes.\n");
+				puts("Counting the internal nodes.\n");
+				long number_of_internal_nodes = internal_nodes(tree);
+				printf("Number of internal nodes: %ld.\n", number_of_internal_nodes);
 				break;
 
 			case 10:
 				clear();
-				printf("Count tree external nodes.\n");
+				puts("Counting the external nodes.");
+				long number_of_external_nodes = external_nodes(tree);
+				printf("Number of external nodes: %ld.\n", number_of_external_nodes);
 				break;
 
 
 			case 11:
 				clear();
-				printf("Determine tree height.\n");
+				puts("Determining the tree height.");
+				int bst_height = tree_height(tree);
+				printf("Tree height: %d.\n", bst_height);
 				break;
 
 			case 12:
