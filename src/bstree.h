@@ -46,5 +46,7 @@ long external_nodes(struct node *);
 // Mirror Tree
 struct node *mirror_tree(struct node *);
 
+// Delete Tree
+struct node *delete_tree(struct node *);
 
 #endif
