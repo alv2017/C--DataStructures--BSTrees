@@ -158,7 +158,22 @@ int main(void) {
 
 			case 13:
 				clear();
-				printf("Find the mirror image.\n");
+				puts("Displaying the mirror image of the tree.");
+				tree = mirror_tree(tree);
+				if (tree == NULL) {
+					puts("The tree is empty. The operation can not be applied.");
+				}
+				else {
+				    puts("\nPre-order traversal mode: ");
+				    preorder_traversal(tree);
+
+				    puts("\nIn-order traversal mode: ");
+				    inorder_traversal(tree);
+
+				    puts("\nPost-order traversal mode: ");
+				    postorder_traversal(tree);
+				}
+				tree = mirror_tree(tree);
 				break;
 
 			case 14:

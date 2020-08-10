@@ -207,5 +207,19 @@ long external_nodes(struct node *subtree) {
 	}
 }
 
+// Mirror Tree
+struct node *mirror_tree(struct node *subtree) {
+	struct node *ptr = subtree;
+	struct node *tmp = NULL;
+
+	if (ptr != NULL) {
+		tmp = ptr->left;
+		ptr->left = ptr->right;
+		ptr->right = tmp;
+		mirror_tree(ptr->left);
+		mirror_tree(ptr->right);
+	}
+	return subtree;
+}
 
 
