@@ -178,11 +178,14 @@ int main(void) {
 
 			case 14:
 				clear();
-				printf("Delete tree.\n");
+				printf("Deleting a tree.\n");
+				tree = delete_tree(tree);
 				break;
 
 			case 15:
 				clear();
+				if (tree)
+				    tree = delete_tree(tree);
 				printf("Exit.\n");
 				return 0;
 		}

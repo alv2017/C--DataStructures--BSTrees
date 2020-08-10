@@ -222,4 +222,18 @@ struct node *mirror_tree(struct node *subtree) {
 	return subtree;
 }
 
+// Delete Tree
+struct node *delete_tree(struct node *tree) {
+	if (tree != NULL) {
+		struct node *ptr = tree;
+		delete_tree(tree->left);
+		delete_tree(tree->right);
+		ptr->right = NULL;
+		ptr->left = NULL;
+		ptr->data = 0;
+		free(ptr);
+		return NULL;
+	} else
+		return NULL;
+}
 
