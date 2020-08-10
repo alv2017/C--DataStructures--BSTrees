@@ -43,5 +43,8 @@ long internal_nodes(struct node *);
 // External nodes
 long external_nodes(struct node *);
 
+// Mirror Tree
+struct node *mirror_tree(struct node *);
+
 
 #endif
